@@ -1,8 +1,7 @@
 var recipes = {};
 
 function updateObjectWithKeyAndValue(object, key, value){
-  var newObj = object;
-  newObj[key] = value;
+  var newObj = Object.assign({}, object, {[key]: value});
   return newObj;
 }
 
@@ -21,3 +20,5 @@ function destructivelyDeleteFromObjectByKey(object, key){
   delete object[key];
   return object;
 }
+
+//Object.assign({}, obj, { [key]: value })
